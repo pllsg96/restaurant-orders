@@ -15,7 +15,6 @@ class Restriction(Enum):
         return hash(repr(self))
 
 
-# aa
 def restriction_map():
     return {
         "queijo mussarela": {Restriction.LACTOSE, Restriction.ANIMAL_DERIVED},
