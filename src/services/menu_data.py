@@ -16,12 +16,13 @@ class MenuData:
     def generate_menu(self):
         menu = {}
         for item in self.items:
-            dish = Dish(item["dish"], float(item["price"]))
-            ingredient = Ingredient(item["ingredient"])
-            amount = int(item["recipe_amount"])
-            if dish not in menu:
-                menu[dish] = dish
-            menu[dish].add_ingredient_dependency(
-                ingredient, amount
+            prato = Dish(item["dish"], float(item["price"]))
+            ingredientes = Ingredient(item["ingredient"])
+            valor = int(item["recipe_amount"])
+            if prato not in menu:
+                menu[prato] = prato
+            menu[prato].add_ingredient_dependency(
+                ingredientes, valor
             )
+
         return set(menu.values())
